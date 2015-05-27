@@ -13,6 +13,7 @@ public class Main {
         String name;
         int sum;
         int opt = 0;
+        int ss;
         HashMap<String,Integer> map = new HashMap<>();
         Set<Map.Entry<String,Integer>> set = map.entrySet();
         do {
@@ -20,6 +21,7 @@ public class Main {
             System.out.println("1.To add customer and cash sum");
             System.out.println("2.To view all customer's and their sum");
             System.out.println("3.To delete Customer");
+            System.out.println("4.To add sum on account client");
 
 
             System.out.print("\nEnter your choice: ");
@@ -47,6 +49,20 @@ public class Main {
                     name = br.readLine();
                     for(Map.Entry<String,Integer> de : set){
                         if(de.getKey().equals(name)) map.remove(name);
+                    }
+                    break;
+                case 4:
+                    System.out.print("Enter name: " );
+                    name = br.readLine();
+                    for(Map.Entry<String,Integer> su: set){
+                        if(su.getKey().equals(name)){
+                            System.out.print("Enter sum: ");
+                            sum = Integer.parseInt(br.readLine());
+                            int s = su.getValue();
+                            ss = s + sum;
+                            map.put(name,ss);
+                        }
+                        break;
                     }
             }
         }while (opt !=0);
