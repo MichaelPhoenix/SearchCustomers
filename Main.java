@@ -19,6 +19,7 @@ public class Main {
             System.out.println("========Application options========");
             System.out.println("1.To add customer and cash sum");
             System.out.println("2.To view all customer's and their sum");
+            System.out.println("3.To delete Customer");
 
 
             System.out.print("\nEnter your choice: ");
@@ -39,7 +40,13 @@ public class Main {
                     for(Map.Entry<String,Integer> me : set){
                         System.out.println("Customer name: " + me.getKey());
                         System.out.println("Sum: " + me.getValue() + " USD.");
-                        break;
+                    }
+                    break;
+                case 3:
+                    System.out.print("Enter name: ");
+                    name = br.readLine();
+                    for(Map.Entry<String,Integer> de : set){
+                        if(de.getKey().equals(name)) map.remove(name);
                     }
             }
         }while (opt !=0);
