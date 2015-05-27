@@ -62,8 +62,8 @@ public class Main {
                             ss = s + sum;
                             map.put(name,ss);
                         }
-                        break;
                     }
+                    break;
             }
         }while (opt !=0);
     }
