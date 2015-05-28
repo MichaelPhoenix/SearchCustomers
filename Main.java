@@ -22,6 +22,7 @@ public class Main {
             System.out.println("2.To view all customer's and their sum");
             System.out.println("3.To delete Customer");
             System.out.println("4.To add sum on account client");
+            System.out.println("5.View all customers");
             System.out.println("0.Exit");
 
 
@@ -65,6 +66,14 @@ public class Main {
                         }
                     }
                     break;
+
+                case 5:
+                    System.out.println("===================================");
+                    for(Map.Entry<String,Integer> vi : set){
+                        System.out.println("Customer: " + vi.getKey());
+                    }
+                    break;
+
                 case 0:
                     System.out.println("Thank you!!\n****Good Bye****");
                     break;
@@ -72,6 +81,7 @@ public class Main {
 
                 default:
                     System.out.println("Invalid Option!\n");
+                    break;
             }
         }while (opt !=0);
     }
