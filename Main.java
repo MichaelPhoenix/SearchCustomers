@@ -79,7 +79,6 @@ public class Main  {
                     break;
 
                 case 5:
-                    System.out.println("===================================");
                     for(Map.Entry<String,Integer> vi : set){
                         System.out.println("Customer: " + vi.getKey());
                     }
@@ -87,11 +86,12 @@ public class Main  {
 
 
                 case 6:
+                    System.out.println("===================================");
                     System.out.println("Enter your name: ");
                     name = br.readLine();
                     for(Map.Entry<String,Integer> en : set){
                         if(en.getKey().equals(name)){
-                            System.out.println("Enter address and mobile telephone:  ");
+                            System.out.println("Enter address and home telephone:  ");
                             address = br.readLine();
                             telephone = Integer.parseInt(br.readLine());
                             info.put(address,telephone);
@@ -99,12 +99,13 @@ public class Main  {
                     }
                     break;
                 case 7:
+                    System.out.println("===================================");
                     System.out.println("Enter name: ");
                     name = br.readLine();
                     for(Map.Entry<String,Integer> view : set){
                         if(view.getKey().equals(name)){
                             for(Map.Entry<String,Integer> inf : infoset){
-                                System.out.println("Adrres: " + inf.getKey());
+                                System.out.println("Street: " + inf.getKey());
                                 System.out.println("Telephone: " + inf.getValue());
                             }
                         }
