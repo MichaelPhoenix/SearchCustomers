@@ -16,8 +16,9 @@ public class Main  {
         String name;
         int sum;
         int opt = 0;
-        int changeSum;
+        int plusSum;
         int telephone;
+        int minusSum;
         String address;
         HashMap<String,Integer> info = new HashMap<>();
         Set<Map.Entry<String,Integer>> infoset =  info.entrySet();
@@ -35,6 +36,7 @@ public class Main  {
             System.out.println("5.View all customers");
             System.out.println("6.Enter customer data");
             System.out.println("7.View customer data");
+            System.out.println("8.To take money");
             System.out.println("0.Exit");
 
 
@@ -64,22 +66,26 @@ public class Main  {
                     for(Map.Entry<String,Integer> de : set){
                         if(de.getKey().equals(name)) map.remove(name);
                     }
+
                     break;
+
+
                 case 4:
                     System.out.print("Enter name: " );
                     name = br.readLine();
                     for(Map.Entry<String,Integer> su: set){
                         if(su.getKey().equals(name)){
                             System.out.print("Enter sum: ");
-                            sum = Integer.parseInt(br.readLine());
+                            plusSum = Integer.parseInt(br.readLine());
                             int s = su.getValue();
-                            changeSum = s + sum;
-                            map.put(name,changeSum);
+                            plusSum = s + plusSum;
+                            map.put(name,plusSum);
                         }
                     }
                     break;
 
                 case 5:
+                    System.out.println("===================================");
                     for(Map.Entry<String,Integer> vi : set){
                         System.out.println("Customer: " + vi.getKey());
                     }
@@ -113,6 +119,20 @@ public class Main  {
                     }
                     break;
 
+                case 8:
+                    System.out.println("===================================");
+                    System.out.println("Enter name: ");
+                    name = br.readLine();
+                    for(Map.Entry<String,Integer> toTake : set){
+                        if(toTake.getKey().equals(name)){
+                            System.out.println("Enter the sum which you need take\nSum: ");
+                            minusSum = Integer.parseInt(br.readLine());
+                            int m = toTake.getValue();
+                            minusSum = m - minusSum;
+                            map.put(name,minusSum);
+                        }
+                    }
+                    break;
 
 
                 case 0:
@@ -121,6 +141,7 @@ public class Main  {
 
 
                 default:
+                    System.out.println("===================================");
                     System.out.println("Invalid Option!\n");
                     break;
             }
